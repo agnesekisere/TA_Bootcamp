@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive HTML Page</title>
+    <style>
+      .header {
+        color: blue;
+        text-align: center;
+      }
+      .main-section {
+        background-color: #f0f0f0;
+        padding: 20px;
+      }
+      .description {
+        font-size: 18px;
+      }
+      .input-field {
+        width: 200px;
+        margin-bottom: 10px;
+      }
+      .submit-button,
+      .action-button,
+      .reset-button {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        border: none;
+        margin-right: 5px;
+      }
+      .goofy {
+        animation: spin 2s infinite linear;
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="header">Welcome to the Interactive Page</h1>
+
+    <section class="main-section">
+      <p class="description">This is a paragraph inside the main section.</p>
+
+      <input type="text" class="input-field" placeholder="Enter text here" />
+      <button class="submit-button">Submit</button>
+      <button class="action-button">Do Something</button>
+      <button class="reset-button">Reset</button>
+    </section>
+
+    <script>
+      // Function to execute when 'Do Something' button is clicked
+      document
+        .querySelector(".action-button")
+        .addEventListener("click", function () {
+          // Disable the input field
+          document.querySelector(".input-field").disabled = true;
+
+          // Hide the submit button
+          document.querySelector(".submit-button").style.display = "none";
+
+          // Display an alert box
+          alert("You clicked the Do Something button!");
+
+          // Add goofy CSS class to the header
+          document.querySelector(".header").classList.add("goofy");
+        });
+
+      // Function to execute when 'Reset' button is clicked
+      document
+        .querySelector(".reset-button")
+        .addEventListener("click", function () {
+          // Enable the input field
+          document.querySelector(".input-field").disabled = false;
+
+          // Show the submit button
+          document.querySelector(".submit-button").style.display =
+            "inline-block";
+
+          // Remove the goofy CSS class from the header
+          document.querySelector(".header").classList.remove("goofy");
+        });
+    </script>
+  </body>
+</html>
