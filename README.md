@@ -1,3 +1,3 @@
 # TA_Bootcamp
 
-This is a change in the feature branch
+This line is edited in conflict-branch
